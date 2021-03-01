@@ -4,7 +4,33 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/>
+
+<div>
+  <input v-model="name" type="text"/>
+  {{name}}
+  <hr>
+  <button @click="incrementarCounter">Aña para incrementar</button>
+  {{counter}}
+</div>
+
 </template>
+
+<script>
+export default {
+  data() {
+    return{
+      name: 'Dino',
+      counter: 0
+    }
+  },
+
+  methods: {
+      incrementarCounter(){
+        this.counter++
+      }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
